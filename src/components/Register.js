@@ -15,15 +15,11 @@ import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 import { fr } from 'date-fns/locale';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-
-// Importer les fonctions de validation depuis le fichier approprié
-import { validateForm } from '../utils/validate'; // Assurez-vous d'ajuster le chemin du fichier selon l'emplacement réel
-
+import { validateForm } from '../utils/validate';
 
 export default function SignUp() {
   let defaultTheme = createTheme();
   const [isButtonDisabled, setIsButtonDisabled] = React.useState(true);
-//   const [isAgeValid, setIsAgeValid] = React.useState(true); // Nouvel état pour stocker la validité de l'âge
   const [formData, setFormData] = React.useState({
     firstName: '',
     lastName: '',
@@ -51,6 +47,10 @@ export default function SignUp() {
     });
   };
 
+  /**
+   * Fonction pour gérer les changements de date dans le sélecteur de date.
+   * @param {Date | null} date La date sélectionnée.
+   */
   const handleDateChange = (date) => {
     setFormData({
       ...formData,
@@ -74,22 +74,23 @@ export default function SignUp() {
     }
   }, [formData]);
 
+  /**
+   * Vérifie que tous les champs sont valides avant de soumettre le formulaire.
+   * Envoie une erreur toaster si le formulaire est invalide.
+   * @param {Event} event L'événement de soumission de formulaire.
+   */
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    // Check if form is valid
     const { isFormValid, errorMessages } = validateForm(formData);
 
     setErrorMessages(errorMessages);
 
     if (isFormValid) {
-      // Save data to local storage
       localStorage.setItem('userData', JSON.stringify(formData));
 
-      // Show success toaster
       toast.success('Inscription réussie !');
 
-      // Clear form fields
       setFormData({
         firstName: '',
         lastName: '',
@@ -100,7 +101,6 @@ export default function SignUp() {
         selectedDate: null
       });
     } else {
-      // Show error toaster
       toast.error('Veuillez remplir tous les champs correctement.');
     }
   };
@@ -196,15 +196,6 @@ export default function SignUp() {
                         label="Date"
                         error={!!errorMessages.selectedDate}
                         helperText={errorMessages.selectedDate}
-                        // error={
-                        //   !!errorMessages.selectedDate ||
-                        //   (!errorMessages.selectedDate && formData.selectedDate !== null && !isAgeValid)
-                        // }
-                        // helperText={
-                        //   errorMessages.selectedDate ||
-                        //   (!errorMessages.selectedDate && formData.selectedDate !== null && !isAgeValid ?
-                        //   'Vous devez avoir 18 ans ou plus.' : '')
-                        // }
                       />
                     )}
                   />
