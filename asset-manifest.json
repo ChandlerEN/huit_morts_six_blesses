@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/static/css/main.756f275b.css",
-    "main.js": "/static/js/main.2143170c.js",
-    "static/js/592.5feb0a20.chunk.js": "/static/js/592.5feb0a20.chunk.js",
-    "index.html": "/index.html",
-    "main.756f275b.css.map": "/static/css/main.756f275b.css.map",
-    "main.2143170c.js.map": "/static/js/main.2143170c.js.map",
-    "592.5feb0a20.chunk.js.map": "/static/js/592.5feb0a20.chunk.js.map"
+    "main.css": "/huit_morts_six_blesses/static/css/main.756f275b.css",
+    "main.js": "/huit_morts_six_blesses/static/js/main.e2e426dc.js",
+    "static/js/592.5feb0a20.chunk.js": "/huit_morts_six_blesses/static/js/592.5feb0a20.chunk.js",
+    "index.html": "/huit_morts_six_blesses/index.html",
+    "main.756f275b.css.map": "/huit_morts_six_blesses/static/css/main.756f275b.css.map",
+    "main.e2e426dc.js.map": "/huit_morts_six_blesses/static/js/main.e2e426dc.js.map",
+    "592.5feb0a20.chunk.js.map": "/huit_morts_six_blesses/static/js/592.5feb0a20.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.756f275b.css",
-    "static/js/main.2143170c.js"
+    "static/js/main.e2e426dc.js"
   ]
 }
