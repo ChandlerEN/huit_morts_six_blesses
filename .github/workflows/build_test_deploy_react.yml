@@ -49,7 +49,7 @@ jobs:
     # Deploy to the github-pages environment
     environment:
       name: github-pages
-      url: ${{stepss.deployment.outputs.page_url}}
+      url: ${{steps.deployment.outputs.page_url}}
     runs-on: ubuntu-latest
     # Grant GITHUB_TOKEN the permissions required to make a Pages deployment
     permissions:
