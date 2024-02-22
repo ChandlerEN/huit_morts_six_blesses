@@ -205,7 +205,7 @@ export default function SignUp() {
                     required
                     fullWidth
                     name="ville"
-                    label="ville"
+                    label="Ville"
                     type="ville"
                     id="ville"
                     autoComplete="new-ville"
@@ -220,7 +220,7 @@ export default function SignUp() {
                     required
                     fullWidth
                     name="codePostal"
-                    label="code postal"
+                    label="Code Postal"
                     type="code postal"
                     id="codePostal"
                     autoComplete="new-code postal"
@@ -232,6 +232,7 @@ export default function SignUp() {
                 </Grid>
               </Grid>
               <Button
+                name="Inscription"
                 type="submit"
                 fullWidth
                 variant="contained"
