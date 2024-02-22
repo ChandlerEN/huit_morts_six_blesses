@@ -186,6 +186,7 @@ export default function SignUp() {
                 </Grid>
                 <Grid item xs={20}>
                   <DatePicker
+                    label="Date"
                     value={formData.selectedDate}
                     onChange={handleDateChange}
                     renderInput={(props) => (
@@ -193,7 +194,10 @@ export default function SignUp() {
                         {...props}
                         required
                         fullWidth
-                        label="Date"
+                        // name="Date"
+                        // label="Date"
+                        // type="Date"
+                        // id="Date"
                         error={!!errorMessages.selectedDate}
                         helperText={errorMessages.selectedDate}
                       />
@@ -239,7 +243,7 @@ export default function SignUp() {
                 sx={{ mt: 3, mb: 2 }}
                 disabled={isButtonDisabled}
               >
-                S'inscrire
+                Inscription
               </Button>
             </Box>
             <ToastContainer />

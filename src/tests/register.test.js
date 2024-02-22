@@ -10,71 +10,38 @@ describe('SignUp component', () => {
   test('Vérification des éléments présents dans le formulaire', async () => {
     render(<SignUp />);
 
-    const firstNameLabel = screen.getByLabelText(/Last Name/);
-    expect(firstNameLabel).toBeInTheDocument();
-
-    const lastNameInput = screen.getByLabelText(/First Name/);
-    expect(lastNameInput).toBeInTheDocument();
-
-    const emailInput = screen.getByLabelText(/Email Address/);
-    expect(emailInput).toBeInTheDocument();
-
-    const passwordInpud = screen.getByLabelText(/Password/);
-    expect(passwordInpud).toBeInTheDocument();
-
-    // const birthDateInput = screen.getByLabelText(/Date/);
-    // expect(birthDateInput).toBeInTheDocument();
-
-    const cityInput = screen.getByLabelText(/Ville/);
-    expect(cityInput).toBeInTheDocument();
-
-    const postalCodeInput = screen.getByLabelText(/Code Postal/);
-    expect(postalCodeInput).toBeInTheDocument();
-
-  //   const submitButton = screen.getByRole('button', { name: /Inscription/ });
-  //   expect(submitButton).toBeInTheDocument();
-  // });
-
-
-  // it('renders the sign up form', async () => {
-  //   const { getByLabelText, getByText } = await render(<SignUp />);
+    // Vérifier que les éléments du formulaire sont présents
+    expect(screen.getByLabelText(/First Name/)).toBeInTheDocument();
+    expect(screen.getByLabelText(/Last Name/)).toBeInTheDocument();
+    expect(screen.getByLabelText(/Email Address/)).toBeInTheDocument();
+    expect(screen.getByLabelText(/Password/)).toBeInTheDocument();
+    expect(screen.getByLabelText(/Ville/)).toBeInTheDocument();
+    expect(screen.getByLabelText(/Code Postal/)).toBeInTheDocument();
+    expect(screen.getByLabelText(/Date/)).toBeInTheDocument();
+    expect(screen.getByText(/Inscription/)).toBeInTheDocument();
     
-  //   // Vérifie si les champs et le bouton sont présents
-  //   expect(getByLabelText("First Name")).toBeInTheDocument();
-  //   expect(getByLabelText('Last Name')).toBeInTheDocument();
-  //   expect(getByLabelText('Email Address')).toBeInTheDocument();
-  //   expect(getByLabelText('Password')).toBeInTheDocument();
-  //   expect(getByLabelText('Date')).toBeInTheDocument();
-  //   expect(getByLabelText('ville')).toBeInTheDocument();
-  //   expect(getByLabelText('code postal')).toBeInTheDocument();
-  //   expect(getByText('S\'inscrire')).toBeInTheDocument();
-  // });
+    // Remplir les champs du formulaire avec des données invalides
+    fireEvent.change(screen.getByLabelText(/First Name/), { target: { value: 'John123' } });
+    fireEvent.change(screen.getByLabelText(/Last Name/), { target: { value: '' } }); // Champ vide
+    fireEvent.change(screen.getByLabelText(/Email Address/), { target: { value: 'johnexample.com' } }); // Email invalide
+    fireEvent.change(screen.getByLabelText(/Password/), { target: { value: '' } }); // Champ vide
+    fireEvent.change(screen.getByLabelText(/Ville/), { target: { value: '123' } }); // Valeur numérique
+    fireEvent.change(screen.getByLabelText(/Code Postal/), { target: { value: 'abcde' } }); // Code postal invalide
 
-  // it('displays error messages for invalid form fields', async () => {
-  //   const { getByLabelText, getByText } = render(<SignUp />);
-    
-  //   // Remplir les champs du formulaire avec des données invalides
-  //   fireEvent.change(getByLabelText('First Name'), { target: { value: 'John123' } });
-  //   fireEvent.change(getByLabelText('Last Name'), { target: { value: '' } }); // Champ vide
-  //   fireEvent.change(getByLabelText('Email Address'), { target: { value: 'johnexample.com' } }); // Email invalide
-  //   fireEvent.change(getByLabelText('Password'), { target: { value: '' } }); // Champ vide
-  //   fireEvent.change(getByLabelText('ville'), { target: { value: '123' } }); // Valeur numérique
-  //   fireEvent.change(getByLabelText('code postal'), { target: { value: 'abcde' } }); // Code postal invalide
+    // // Soumettre le formulaire
+    fireEvent.click(screen.getByText(/Inscription/));
 
-  //   // Soumettre le formulaire
-  //   fireEvent.click(getByText('S\'inscrire'));
-
-  //   // Attendre que les messages d'erreur s'affichent
-  //   await waitFor(() => {
-  //     // Vérifier que les messages d'erreur sont affichés pour les champs invalides
-  //     expect(getByText('Le prénom est invalide.')).toBeInTheDocument();
-  //     expect(getByText('Le nom de famille est invalide.')).toBeInTheDocument();
-  //     expect(getByText('L\'adresse email est invalide.')).toBeInTheDocument();
-  //     expect(getByText('Le mot de passe est requis.')).toBeInTheDocument();
-  //     expect(getByText('La ville est invalide.')).toBeInTheDocument();
-  //     expect(getByText('Le code postal doit contenir exactement 5 chiffres.')).toBeInTheDocument();
-  //     // Vous pouvez également vérifier d'autres messages d'erreur selon votre implémentation
-  //   });
+    // // Attendre que les messages d'erreur s'affichent
+    // await waitFor(() => {
+    //   // Vérifier que les messages d'erreur sont affichés pour les champs invalides
+    //   expect(screen.getByText('Le prénom est invalide.')).toBeInTheDocument();
+    //   expect(screen.getByText('Le nom de famille est invalide.')).toBeInTheDocument();
+    //   expect(screen.getByText('L\'adresse email est invalide.')).toBeInTheDocument();
+    //   expect(screen.getByText('Le mot de passe est requis.')).toBeInTheDocument();
+    //   expect(screen.getByText('La ville est invalide.')).toBeInTheDocument();
+    //   expect(screen.getByText('Le code postal doit contenir exactement 5 chiffres.')).toBeInTheDocument();
+    //   // Vous pouvez également vérifier d'autres messages d'erreur selon votre implémentation
+    // });
   // });
 
   // it('disables the sign up button if fields are not filled', () => {
