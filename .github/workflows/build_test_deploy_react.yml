@@ -40,9 +40,9 @@ jobs:
           path: build
           if-no-files-found: error
       - name: Upload coverage reports to Codecov
-        uses: codecov/codecov-action@v4.0.1
+        uses: codecov/codecov-action@v3
         env:
-          token: ${{ secrets.CODECOV_TOKEN }}
+          CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
           slug: ChandlerEN/huit_morts_six_blesses
   # Deploy Job
   deploy:
