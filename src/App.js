@@ -12,14 +12,14 @@
 // export default App;
 
 import "./App.css";
-import axios from "axios";
+import axios from 'axios';
 import { useState, useEffect } from "react";
 import Register from "./components/Register";
 
 function App() {
   const port = process.env.REACT_APP_SERVER_PORT;
   let [usersCount, setUsersCount] = useState(0);
-  
+
   useEffect(() => {
     async function countUsers() {
       try {
