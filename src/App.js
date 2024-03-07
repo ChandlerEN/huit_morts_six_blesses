@@ -1,5 +1,6 @@
 const React = require("react"); // Change to require
-const App = require("./App.css"); // Import CSS (if not using Babel)
+// const App = require("./App.css"); // Import CSS (if not using Babel)
+import './App.css'; // Import CSS (if using Babel)
 const { useState, useEffect } = require("react");
 const Register = require("./components/Register");
 const axios = require('axios');
