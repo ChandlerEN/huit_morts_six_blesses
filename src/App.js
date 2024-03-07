@@ -1,6 +1,6 @@
 import React from "react";
 import "./App.css";
-import axios from 'axios/lib/axios';
+import axios from 'axios';
 import { useState, useEffect } from "react";
 import Register from "./components/Register";
 
