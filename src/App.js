@@ -30,7 +30,7 @@ function App() {
         <h1>Users manager</h1>
         <p>{usersCount} user(s) already registered</p>
         <p>{port}</p>
-        {/* <p>{response.data}</p> */}
+        <p>{response.data.user}</p>
       </header>
     </div>
   );
