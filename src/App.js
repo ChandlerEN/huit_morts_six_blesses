@@ -21,7 +21,7 @@ function App() {
       }
     }
     countUsers();
-  }, []);
+  }, [port]);
 
   return (
     <div className="App">
