@@ -1,23 +1,11 @@
-// import Register from "./components/Register";
-// import "./App.css";
-
-// function App() {
-//   return (
-//     <div className="App">
-//       <Register />
-//     </div>
-//   );
-// }
-
-// export default App;
-
+import React from "react";
 import "./App.css";
 import axios from 'axios';
 import { useState, useEffect } from "react";
 import Register from "./components/Register";
 
 function App() {
-  const port = process.env.REACT_APP_SERVER_PORT;
+  const port = process.env.REACT_APP_SERVER_PORT || 8000;
   let [usersCount, setUsersCount] = useState(0);
 
   useEffect(() => {
