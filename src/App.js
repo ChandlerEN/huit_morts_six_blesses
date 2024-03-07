@@ -1,9 +1,8 @@
-const React = require("react"); // Change to require
-// const App = require("./App.css"); // Import CSS (if not using Babel)
-import './App.css'; // Import CSS (if using Babel)
-const { useState, useEffect } = require("react");
-const Register = require("./components/Register");
-const axios = require('axios');
+import React from "react";
+import "./App.css";
+import axios from 'axios';
+import { useState, useEffect } from "react";
+import Register from "./components/Register";
 
 function App() {
   const port = process.env.REACT_APP_SERVER_PORT || 8000;
