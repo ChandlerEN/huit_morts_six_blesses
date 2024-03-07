@@ -15,7 +15,7 @@ function App() {
           baseURL: `http://localhost:${port}`,
         });
         const response = await api.get(`/users`);
-        setUsersCount(response.data.utilisateurs.length);
+        setUsersCount(response.data.user.length);
       } catch (error) {
         console.error(error);
       }
@@ -29,6 +29,8 @@ function App() {
       <header className="App-header">
         <h1>Users manager</h1>
         <p>{usersCount} user(s) already registered</p>
+        <p>{port}</p>
+        {/* <p>{response.data}</p> */}
       </header>
     </div>
   );
