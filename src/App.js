@@ -5,7 +5,7 @@ import { useState, useEffect } from "react";
 import Register from "./components/Register";
 
 function App() {
-  const port = process.env.REACT_APP_SERVER_PORT || 8000;
+  const port = process.env.REACT_APP_SERVER_PORT || 3000;
   let [usersCount, setUsersCount] = useState(0);
 
   useEffect(() => {
@@ -25,12 +25,12 @@ function App() {
 
   return (
     <div className="App">
-      <Register />
+      <header className="App-header">
+        <Register />
+      </header>
       <header className="App-header">
         <h1>Users manager</h1>
         <p>{usersCount} user(s) already registered</p>
-        <p>{port}</p>
-        {/* <p>{response.data.user}</p> */}
       </header>
     </div>
   );
