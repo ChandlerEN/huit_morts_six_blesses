@@ -5,7 +5,7 @@ import { useState, useEffect } from "react";
 import Register from "./components/Register";
 
 function App() {
-  const port = process.env.REACT_APP_SERVER_PORT || 3000;
+  const port = process.env.REACT_APP_SERVER_PORT || 8000;
   let [usersCount, setUsersCount] = useState(0);
 
   useEffect(() => {
