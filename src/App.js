@@ -25,9 +25,7 @@ function App() {
 
   return (
     <div className="App">
-      <header className="App-header">
         <Register />
-      </header>
       <header className="App-header">
         <h1>Users manager</h1>
         <p>{usersCount} user(s) already registered</p>
